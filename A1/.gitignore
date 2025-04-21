@@ -1,0 +1,17 @@
+Main.java
+*.class
+build/
+dist/
+nbbuild/
+nbdist/
+.nb-gradle/
+**/nbproject/private/
+.netbeans*
+build.xml
+manifest.mf
+.netbeans_automatic_build
+.netbeans_update_resources
+*.log
+*.tmp
+nbproject/
+
