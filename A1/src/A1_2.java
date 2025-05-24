@@ -50,7 +50,7 @@ public class A1_2 {
             System.out.println("Uso: java A1_2 <arquivo> <indice>");
             return;
         }
-        String arquivo = args[0];
+        String arquivo = "grafos/" + args[0];
         int indice = Integer.parseInt(args[1]);
 
         Grafo grafo = new Grafo(arquivo);

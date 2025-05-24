@@ -96,7 +96,7 @@ public class A1_3 {
             return;
         }
 
-        String arquivo = args[0];
+        String arquivo = "grafos/" + args[0];
         Grafo grafo = new Grafo(arquivo);
         CicloEuleriano(grafo);
     }

@@ -61,7 +61,7 @@ public class A1_5 {
             return;
         }
 
-        String arquivo = args[0];
+        String arquivo = "grafos/" + args[0];
         Grafo grafo = new Grafo(arquivo);
         FloydWarshall(grafo);
     }

@@ -73,7 +73,7 @@ public class A1_4 {
             return;
         }
 
-        String arquivo = args[0];
+        String arquivo = "grafos/" + args[0];
         String origem = args[1];
 
         Grafo grafo = new Grafo(arquivo);
