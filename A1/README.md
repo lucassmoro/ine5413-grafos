@@ -1,4 +1,4 @@
-# Projeto de Grafos
+# Atividade Prática A1 – Grafos (INE5413)
 
 Este projeto contempla a implementação de operações fundamentais sobre grafos não-dirigidos e ponderados, incluindo representação, buscas, detecção de ciclo euleriano, algoritmos de caminhos mínimos e um relatório explicativo.
 
@@ -7,7 +7,8 @@ Este projeto contempla a implementação de operações fundamentais sobre grafo
 Implemente um tipo estruturado ou classe para representar um grafo não-dirigido e ponderado \( G(V, E, w) \), onde:
 - \( V \) é o conjunto de vértices
 - \( E \) é o conjunto de arestas
-- \( w: E ightarrow \mathbb{R} \) representa os pesos das arestas
+- \( w: E 
+ightarrow \mathbb{R} \) representa os pesos das arestas
 
 ### Métodos obrigatórios:
 - `qtdVertices()`: retorna o número de vértices;
