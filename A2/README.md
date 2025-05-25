@@ -1,4 +1,4 @@
-# Projeto de Grafos - Parte 2
+# Atividade A2 – Grafos (INE5413)
 
 Este projeto contempla operações em grafos direcionados e não direcionados com foco em algoritmos clássicos como componentes fortemente conexas, ordenação topológica e árvores geradoras mínimas.
 
