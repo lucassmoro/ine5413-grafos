@@ -1,11 +1,5 @@
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class A2_1 {
     public List<Set<String>> kosaraju(Grafo grafo) {
@@ -14,65 +8,61 @@ public class A2_1 {
         Map<String, Integer> TempoFinal = new HashMap<>();
         int[] tempo = new int[1];
 
+        // Primeira DFS (grafo original)
         for (String v : grafo.vertices) {
             if (!conhecido.contains(v)) {
-                DFSvisit(grafo, v, conhecido, TempoInicio, TempoFinal, tempo);
+                DFSvisit(grafo, v, conhecido, TempoInicio, TempoFinal, tempo, null);
             }
         }
 
+        // Transposição do grafo
         Grafo GT = new Grafo();
         for (String v : grafo.vertices) {
             GT.vertices.add(v);
             GT.adjacencias.put(v, new HashSet<>());
         }
         for (String u : grafo.vertices) {
-            for (String v : grafo.adjacencias.get(u)) {
-                GT.adjacencias.get(v).add(u); // inverte aresta
+            for (String v : grafo.adjacencias.getOrDefault(u, new HashSet<>())) {
+                GT.adjacencias.get(v).add(u); // inverte a aresta
             }
         }
 
+        // Ordena os vértices por tempo de término decrescente
         List<String> ordem = new ArrayList<>(grafo.vertices);
         ordem.sort((a, b) -> Integer.compare(TempoFinal.get(b), TempoFinal.get(a)));
 
-        tempo[0] = 0; // RESET
+        // Segunda DFS (no grafo transposto)
+        tempo[0] = 0; // reset
         Set<String> conhecidoT = new HashSet<>();
         Map<String, Integer> TempoInicioT = new HashMap<>();
         Map<String, Integer> TempoFinalT = new HashMap<>();
-
         List<Set<String>> componentes = new ArrayList<>();
+
         for (String v : ordem) {
             if (!conhecidoT.contains(v)) {
                 Set<String> componente = new HashSet<>();
-                DFSVisitColetandoComponente(GT, v, conhecidoT, TempoInicioT, TempoFinalT, tempo, componente);
+                DFSvisit(GT, v, conhecidoT, TempoInicioT, TempoFinalT, tempo, componente);
                 componentes.add(componente);
             }
         }
+
         return componentes;
     }
 
-    public void DFSvisit(Grafo grafo, String v, Set<String> conhecido, Map<String, Integer> TempoInicio, Map<String, Integer> TempoFinal, int[] tempo) {
+    public void DFSvisit(Grafo grafo, String v, Set<String> conhecido,
+                         Map<String, Integer> TempoInicio, Map<String, Integer> TempoFinal,
+                         int[] tempo, Set<String> componente) {
         conhecido.add(v);
+        if (componente != null) componente.add(v);
         tempo[0]++;
         TempoInicio.put(v, tempo[0]);
-        for (String u : grafo.adjacencias.get(v)) {
-            if (!conhecido.contains(u)) {
-                DFSvisit(grafo, u, conhecido, TempoInicio, TempoFinal, tempo);
-            }
-        }
-        tempo[0]++;
-        TempoFinal.put(v, tempo[0]);
-    }
 
-    public void DFSVisitColetandoComponente(Grafo grafo, String v, Set<String> conhecido, Map<String, Integer> TempoInicio, Map<String, Integer> TempoFinal, int[] tempo, Set<String> componente) {
-        conhecido.add(v);
-        componente.add(v);
-        tempo[0]++;
-        TempoInicio.put(v, tempo[0]);
         for (String u : grafo.adjacencias.getOrDefault(v, new HashSet<>())) {
             if (!conhecido.contains(u)) {
-                DFSVisitColetandoComponente(grafo, u, conhecido, TempoInicio, TempoFinal, tempo, componente);
+                DFSvisit(grafo, u, conhecido, TempoInicio, TempoFinal, tempo, componente);
             }
         }
+
         tempo[0]++;
         TempoFinal.put(v, tempo[0]);
     }
