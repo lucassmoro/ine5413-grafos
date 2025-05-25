@@ -51,7 +51,7 @@ public class A2_3 {
             return;
         }
 
-        String nomeArquivo = args[0];
+        String nomeArquivo = "grafos/" + args[0];
         Grafo grafo = new Grafo();
         Map<Integer, String> indiceParaVertice = new HashMap<>();
         Map<String, Integer> verticeParaIndice = new HashMap<>();
