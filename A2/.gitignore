@@ -12,5 +12,5 @@ manifest.mf
 .netbeans_update_resources
 *.log
 *.tmp
-nbproject/
+nbproject/private/
 
