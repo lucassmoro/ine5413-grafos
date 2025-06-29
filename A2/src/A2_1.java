@@ -6,16 +6,14 @@ public class A2_1 {
         Set<String> conhecido = new HashSet<>();
         Map<String, Integer> TempoInicio = new HashMap<>();
         Map<String, Integer> TempoFinal = new HashMap<>();
-        int[] tempo = new int[1];
+        int[] tempo = new int[1]; // pra nao passar por copia
 
-        // Primeira DFS (grafo original)
         for (String v : grafo.vertices) {
             if (!conhecido.contains(v)) {
                 DFSvisit(grafo, v, conhecido, TempoInicio, TempoFinal, tempo, null);
             }
         }
 
-        // Transposição do grafo
         Grafo GT = new Grafo();
         for (String v : grafo.vertices) {
             GT.vertices.add(v);
@@ -23,15 +21,13 @@ public class A2_1 {
         }
         for (String u : grafo.vertices) {
             for (String v : grafo.adjacencias.getOrDefault(u, new HashSet<>())) {
-                GT.adjacencias.get(v).add(u); // inverte a aresta
+                GT.adjacencias.get(v).add(u); 
             }
         }
 
-        // Ordena os vértices por tempo de término decrescente
         List<String> ordem = new ArrayList<>(grafo.vertices);
         ordem.sort((a, b) -> Integer.compare(TempoFinal.get(b), TempoFinal.get(a)));
 
-        // Segunda DFS (no grafo transposto)
         tempo[0] = 0; // reset
         Set<String> conhecidoT = new HashSet<>();
         Map<String, Integer> TempoInicioT = new HashMap<>();
