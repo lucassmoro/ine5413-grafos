@@ -1,1 +1,4 @@
 /A3/build/
+*.class
+nbproject/private/
+build/
