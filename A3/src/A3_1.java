@@ -104,10 +104,10 @@ public double calcularFluxoMaximo(Grafo grafo, String s, String t) {
     try {
         Grafo grafo = new Grafo(arquivo); 
         if (!grafo.vertices.contains(origem) && origem.matches("\\d+")) {
-            origem = grafo.indiceParaVertice.getOrDefault(Integer.parseInt(origem), origem);
+            origem = grafo.indiceParaVertice.getOrDefault(Integer.valueOf(origem), origem);
         }
         if (!grafo.vertices.contains(destino) && destino.matches("\\d+")) {
-            destino = grafo.indiceParaVertice.getOrDefault(Integer.parseInt(destino), destino);
+            destino = grafo.indiceParaVertice.getOrDefault(Integer.valueOf(destino), destino);
         }
 
         A3_1 solver = new A3_1();
