@@ -2,7 +2,7 @@
 
 Este projeto contempla a implementação de operações fundamentais sobre grafos não-dirigidos e ponderados, incluindo representação, buscas, detecção de ciclo euleriano, algoritmos de caminhos mínimos e um relatório explicativo.
 
-## 1. Representação do Grafo (2,0 pts)
+## 1. Representação do Grafo
 
 Implemente um tipo estruturado ou classe para representar um grafo não-dirigido e ponderado \( G(V, E, w) \), onde:
 - \( V \) é o conjunto de vértices
@@ -22,7 +22,7 @@ ightarrow \mathbb{R} \) representa os pesos das arestas
 
 ---
 
-## 2. Busca em Largura (2,0 pts)
+## 2. Busca em Largura
 
 Implemente um programa que recebe:
 - um arquivo com a definição do grafo
@@ -39,7 +39,7 @@ Executa uma **busca em largura (BFS)** e imprime os vértices por nível:
 
 ---
 
-## 3. Ciclo Euleriano (2,0 pts)
+## 3. Ciclo Euleriano
 
 Implemente um programa que:
 - recebe um grafo como argumento
@@ -58,7 +58,7 @@ Implemente um programa que:
 
 ---
 
-## 4. Algoritmo de Bellman-Ford ou Dijkstra (2,0 pts)
+## 4. Algoritmo de Bellman-Ford ou Dijkstra
 
 Implemente um programa que:
 - recebe um grafo e um vértice inicial `s`
@@ -76,7 +76,7 @@ Implemente um programa que:
 
 ---
 
-## 5. Algoritmo de Floyd-Warshall (2,0 pts)
+## 5. Algoritmo de Floyd-Warshall 
 
 Implemente um programa que:
 - recebe um grafo como argumento
@@ -91,10 +91,4 @@ Implemente um programa que:
 4:5,8,11,0
 ```
 
----
 
-## 6. Relatório (2,0 pts)
-
-Elabore um relatório de uma página em formato PDF contendo:
-- justificativas para as estruturas de dados utilizadas em cada item;
-- nomes dos integrantes da equipe.

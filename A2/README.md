@@ -4,7 +4,7 @@ Este projeto contempla operações em grafos direcionados e não direcionados co
 
 ---
 
-## 1. Componentes Fortemente Conexas (3,0 pts)
+## 1. Componentes Fortemente Conexas
 
 Implemente um programa que:
 - Recebe como argumento um grafo dirigido e não ponderado
@@ -18,7 +18,7 @@ Implemente um programa que:
 
 ---
 
-## 2. Ordenação Topológica (3,0 pts)
+## 2. Ordenação Topológica
 
 Implemente um programa que:
 - Recebe como argumento um grafo dirigido e não ponderado com vértices rotulados
@@ -32,7 +32,7 @@ Acordar, DesligarDespertador, CalçarSandalias, LevantarDaCama, TomarBanho, Esco
 
 ---
 
-## 3. Árvore Geradora Mínima - Kruskal ou Prim (3,0 pts)
+## 3. Árvore Geradora Mínima - Kruskal ou Prim
 
 Implemente um programa que:
 - Recebe como argumento um grafo não dirigido e ponderado
@@ -46,14 +46,6 @@ Implemente um programa que:
 22.0
 6-5, 1-2, 3-4, 4-1, 5-2
 ```
-
----
-
-## 4. Relatório (3,0 pts)
-
-Elabore um relatório de **uma página** em PDF contendo:
-- Justificativas para as estruturas de dados utilizadas em cada exercício
-- Nomes dos integrantes da equipe
 
 ---
 
